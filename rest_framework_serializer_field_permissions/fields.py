@@ -182,3 +182,29 @@ class ModelField(PermissionMixin, fields.ModelField):
 # pylint: disable=abstract-method
 class SerializerMethodField(PermissionMixin, fields.SerializerMethodField):
     pass
+
+
+class_substitution = {
+    fields.BooleanField : BooleanField,
+    fields.NullBooleanField : NullBooleanField,
+    fields.CharField : CharField,
+    fields.EmailField : EmailField,
+    fields.RegexField : RegexField,
+    fields.SlugField : SlugField,
+    fields.URLField : URLField,
+    fields.IntegerField : IntegerField,
+    fields.FloatField : FloatField,
+    fields.DecimalField : DecimalField,
+    fields.DateField : DateField,
+    fields.DateTimeField : DateTimeField,
+    fields.TimeField : TimeField,
+    fields.ChoiceField : ChoiceField,
+    fields.MultipleChoiceField : MultipleChoiceField,
+    fields.FileField : FileField,
+    fields.ImageField : ImageField,
+    fields.ListField : ListField,
+    fields.ReadOnlyField : ReadOnlyField,
+    fields.HiddenField : HiddenField,
+    fields.ModelField : ModelField,
+    fields.SerializerMethodField : SerializerMethodField,
+}
