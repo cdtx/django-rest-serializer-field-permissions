@@ -20,7 +20,7 @@ class FieldPermissionSerializerMixin(object):
         :return: a set of permission-scrubbed fields
         """
         ret = super(FieldPermissionSerializerMixin, self).fields
-        request = self._context["request"]
+        request = self.context.get["request"]
 
         for field_name, field in ret.items():
             if hasattr(field, 'check_permission') and (not field.check_permission(request)):
